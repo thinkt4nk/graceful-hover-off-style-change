@@ -18,12 +18,30 @@
 		$(function() {
 			$('.example').hoverStyleTimer({
 				onHoverOn : {
-					'background-color' : 'blue'
+					'background-color' : 'blue',
+					animate_style : {
+						'width' : '400px'
+					}
 				},
 				onHoverOff : {
-					'background-color' : 'green'
+					'background-color' : 'green',
+					animate_style : {
+						'width' : '100px'
+					}
 				},
-				timeAfterHoverOff : 3
+				onTick : function(node) { 
+					//console.log('tick');
+					//console.log(node);
+				},
+				onTransition : {
+					'background-color' : 'red',
+					animate_style : {
+						'width' : '300px'
+					}
+				},
+				timeAfterHoverOff : 3,
+				animate : true,
+				animate_interval : 'fast'
 			});
 		});
 	</script>
